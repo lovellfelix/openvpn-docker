@@ -1,6 +1,6 @@
 # Openvpn Docker
 
-Forked from (jfelten)[https://github.com/jfelten/openvpn-docker] and updated to openvpn 2.4
+Forked from (jfelten)[https://github.com/jfelten/openvpn-docker] and updated to openvpn 2.5.0
 
 To build:
 
