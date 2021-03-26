@@ -1,5 +1,5 @@
 # Smallest base image
-FROM alpine:3.10.2
+FROM alpine:3.13.3
 
 MAINTAINER Lovell Felix<hello@lovellfelix.com>
 
