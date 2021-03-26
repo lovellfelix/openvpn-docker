@@ -1,15 +1,18 @@
 # Smallest base image
-FROM alpine:3.13.3
+FROM alpine:3.13
 
-MAINTAINER Lovell Felix<hello@lovellfelix.com>
-
-ADD VERSION .
+LABEL maintainer Lovell Felix<hello@lovellfelix.com>
+LABEL org.label-schema.build-date $BUILD_DATE
+LABEL org.label-schema.name openvpn
+LABEL org.label-schema.description Openvpn server in docker
+LABEL org.label-schema.url https://github.com/lovellfelix/openvpn-docker
+LABEL org.label-schema.vcs-url https://github.com/lovellfelix/openvpn-docker
+LABEL org.label-schema.version 2.4.0
 
 # Install needed packages
-RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community/" >> /etc/apk/repositories && \
-    echo "http://dl-4.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories && \
-    apk add --update openssl easy-rsa openvpn iptables bash && \
-    rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
+RUN apk update
+RUN apk add openssl easy-rsa openvpn iptables bash
+RUN rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
 # Configure tun
 RUN mkdir -p /dev/net && \
