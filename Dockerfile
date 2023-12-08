@@ -1,5 +1,5 @@
 # Smallest base image
-FROM alpine:3.14
+FROM alpine:3.19
 
 LABEL maintainer Lovell Felix<hello@lovellfelix.com>
 LABEL org.label-schema.build-date $BUILD_DATE
